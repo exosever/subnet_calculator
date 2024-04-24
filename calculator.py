@@ -1,102 +1,115 @@
-#Subnet calculator by Joshua Harrison
-print("Subnet Calculator by Joshua Harrison")
+#Subnet calculator by Joshua Harrison aka Severx
+print("Subnet Calculator by Joshua Harrison aka SeverX")
 hosts=input('Please input number of hosts required:')
 
 hosts = int(hosts)
 
-#Changes - changed subsequent IF statements for ELIF statements
+#Changes------------------------------------------------------------------------
+#Changed subsequent IF statements for ELIF statements
+#Removed unnecessary condtionals in ELIF statements to simplify code
+#Began adding QC for human input errors
+#-------------------------------------------------------------------------------
 
-#Seperate statements for each CIDR. Manually entered ranges for available hosts to the appropriate subnet mask with regards to total hosts-(network id+broadcast address).
-if hosts == 2:
+#ToDo---------------------------------------------------------------------------
+#Add an operation to send feedback on accidental non-numerical input
+#Have it print the response, and a new input?
+#-------------------------------------------------------------------------------
+
+#Seperate statements for each CIDR. Manually entered ranges for available hosts to the appropriate subnet mask with regards to total hosts-(network id+broadcast address)
+if hosts == 0:
+  print("If you have 0 hosts, you do not require a subnet.")
+
+elif hosts <= 2:
   subnet="255.255.255.252"
   print("Your subnet mask is " + subnet)
 
-elif hosts >= 2 and hosts <= 7:
+elif hosts <= 7:
   subnet="255.255.255.248"
   print("Your subnet mask is " + subnet)
 
-elif hosts >= 8 and hosts <= 17:
+elif hosts <= 17:
   subnet="255.255.255.240"
   print("Your subnet mask is " + subnet)
 
-elif hosts >= 18 and hosts <= 31:
+elif hosts <= 31:
   subnet="255.255.255.224"
   print("Your subnet mask is " + subnet)
 
-elif hosts >= 32 and hosts <= 63:
+elif hosts <= 63:
   subnet="255.255.255.192"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 64 and hosts <= 127:
+
+elif hosts <= 127:
   subnet="255.255.255.128"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 128 and hosts <= 255:
+
+elif hosts <= 255:
   subnet="255.255.255.0"
   print("Your subnet mask is " + subnet)
 
-elif hosts >= 256 and hosts <= 511:
+elif hosts <= 511:
   subnet="255.255.254.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 512 and hosts <= 1023:
+
+elif hosts <= 1023:
   subnet="255.255.252.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 1024 and hosts <= 2047:
+
+elif hosts <= 2047:
   subnet="255.255.248.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 2047 and hosts <= 4095:
+
+elif hosts <= 4095:
   subnet="255.255.240.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 4096 and hosts <= 8191:
+
+elif hosts <= 8191:
   subnet="255.255.224.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 8192 and hosts <= 16383:
+
+elif hosts <= 16383:
   subnet="255.255.192.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 16384 and hosts <= 32767:
+
+elif hosts <= 32767:
   subnet="255.255.128.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 32768 and hosts <= 65535:
+
+elif hosts <= 65535:
   subnet="255.255.0.0"
   print("Your subnet mask is " + subnet)
 
-elif hosts >= 65536 and hosts <= 131071:
+elif hosts <= 131071:
   subnet="255.254.0.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 131072 and hosts <= 262143:
+
+elif hosts <= 262143:
   subnet="255.252.0.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 262144 and hosts <= 524287:
+
+elif hosts <= 524287:
   subnet="255.248.0.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 524288 and hosts <= 1048575:
+
+elif hosts <= 1048575:
   subnet="255.240.0.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 1048576 and hosts <= 2097151:
+
+elif hosts <= 2097151:
   subnet="255.224.0.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 2097152 and hosts <= 4194303:
+
+elif hosts <= 4194303:
   subnet="255.192.0.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 4194304 and hosts <= 8388607:
+
+elif hosts <= 8388607:
   subnet="255.128.0.0"
   print("Your subnet mask is " + subnet)
-  
-elif hosts >= 8388608 and hosts <= 16777215:
+
+elif hosts <= 16777215:
   subnet="255.0.0.0"
   print("Your subnet mask is " + subnet)
 
-  
+else:
+  print("Invalid number submitted. Please check and try again.")
